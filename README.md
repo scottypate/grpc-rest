@@ -1,6 +1,6 @@
-# GRPC Rest Example
+# gRPC Rest Example
 
-This repository is an example of how to use GRPC and REST together in a single service. This gives the benefits of using a protocol buffer definition for your service, but also allows you to use REST for clients that don't support GRPC.
+This repository is an example of how to use gRPC and REST together in a single service. This gives the benefits of using a protocol buffer definition for your service, but also allows you to use REST for clients that don't support gRPC.
 
 The backbone of this architecture is the protocol buffer which defines the service, the data interface, and the methods supported by the service. This architecture provides a language agnostic implementation of static typing data transfer. The best use cases for this type of architecture are internal services communication, aka service mesh.
 
