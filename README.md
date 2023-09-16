@@ -1,4 +1,4 @@
-# gRPC Rest Example
+# gRPC REST Example
 
 This repository is an example of how to use gRPC and REST together in a single service. This gives the benefits of using a protocol buffer definition for your service, but also allows you to use REST for clients that don't support gRPC.
 
