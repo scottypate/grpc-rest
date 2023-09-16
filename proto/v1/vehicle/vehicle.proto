@@ -1,0 +1,42 @@
+syntax = "proto3";
+
+package v1.vehicle;
+
+option go_package = "github.com/scottypate/grpc-rest/codegen/go/v1/patient";
+
+message Vehicle {
+  string id = 1;
+  string vin = 2;
+  string make = 3;
+  string model = 4;
+  int64 year = 5;
+  string trim = 6;
+}
+
+message GetVehicleRequest {
+  string vin = 1;
+}
+
+message GetVehicleResponse {
+  Vehicle vehicle = 1;
+}
+
+message GetVehiclesRequest {}
+
+message GetVehiclesResponse {
+  repeated Vehicle vehicles = 1;
+}
+
+message CreateVehicleRequest {
+  Vehicle vehicle = 1;
+}
+
+message CreateVehicleResponse {
+  Vehicle vehicle = 1;
+}
+
+service VehicleService {
+  rpc GetVehicle(GetVehicleRequest) returns (GetVehicleResponse) {}
+  rpc GetVehicles(GetVehiclesRequest) returns (GetVehiclesResponse) {}
+  rpc CreateVehicle(CreateVehicleRequest) returns (CreateVehicleResponse) {}
+}

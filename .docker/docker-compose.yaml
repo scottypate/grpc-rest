@@ -1,0 +1,38 @@
+version: "3"
+
+services:
+  postgres:
+    image: postgres:15
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: LocalDevelopmentOnly
+      POSTGRES_DB: postgres
+
+  server:
+    image: grpc-rest:latest
+    build:
+      context: ..
+      dockerfile: .docker/Dockerfile
+    ports:
+      - "50051:50051"
+    command: go run server/main.go
+    volumes:
+      - ..:/grpc-rest
+    depends_on:
+      - postgres
+
+  rest:
+    image: grpc-rest:latest
+    build:
+      context: ..
+      dockerfile: .docker/Dockerfile
+    ports:
+      - "50001:50001"
+    command: go run client/rest.go
+    volumes:
+      - ..:/grpc-rest
+    depends_on:
+      - server
+      - postgres
