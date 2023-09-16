@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package v1.vehicle;
 
-option go_package = "github.com/scottypate/grpc-rest/codegen/go/v1/patient";
+option go_package = "github.com/scottypate/grpc-rest/codegen/go/v1/vehicle";
 
 message Vehicle {
   string id = 1;
