@@ -17,7 +17,7 @@ services:
       dockerfile: .docker/Dockerfile
     ports:
       - "50051:50051"
-    command: go run server/main.go
+    command: go run internal/server/server.go
     volumes:
       - ..:/grpc-rest
     depends_on:
@@ -30,7 +30,7 @@ services:
       dockerfile: .docker/Dockerfile
     ports:
       - "50001:50001"
-    command: go run client/rest.go
+    command: go run internal/client/rest.go
     volumes:
       - ..:/grpc-rest
     depends_on:

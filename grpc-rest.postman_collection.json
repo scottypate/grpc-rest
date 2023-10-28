@@ -1,0 +1,74 @@
+{
+	"info": {
+		"_postman_id": "9acb6e40-380f-4639-9db1-52bb1d07649f",
+		"name": "grpc-rest",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29050871"
+	},
+	"item": [
+		{
+			"name": "List Vehicles",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:5000/vehicles",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"vehicles"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create a Vehicle",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"first_name\": \"JUNIOR\",\n    \"last_name\": \"COX\",\n    \"middle_initial\": \"T\",\n    \"dob\": \"2009-01-26\",\n    \"medicaid_number\": 726230167,\n    \"legacy_mongo_pid\": 16087\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5000/vehicles",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"vehicles"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Single Vehicle",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:50001/vehicles/123456789",
+					"host": [
+						"localhost"
+					],
+					"port": "50001",
+					"path": [
+						"vehicles",
+						"123456789"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
